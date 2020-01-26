@@ -7,3 +7,7 @@ docker version
 ```
 docker -v/docker --version
 ```
+details information about installed docker
+```
+docker info
+```
