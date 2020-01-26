@@ -96,5 +96,19 @@ remove container
 docker rm <container_id>
 ```
 
+# System Info
+given the information of running container, memory uses etc.
+```
+docker stats
+```
+check disk uses of docker 
+```
+docker system df
+```
+removed all the stoped container
+```
+docker system prune
+```
+
 
 
