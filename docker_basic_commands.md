@@ -11,3 +11,6 @@ details information about installed docker
 ```
 docker info
 ```
+get information about any docker commands (docker --help)
+```
+docker image --help
