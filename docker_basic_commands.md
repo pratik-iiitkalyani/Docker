@@ -20,7 +20,8 @@ login to docker hub
 docker login
 ```
 
-Images(docker images --help - get info about all docker image command)
+#Images
+(docker images --help - get info about all docker image command)
 get list of all images
 ```
 docker images
