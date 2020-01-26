@@ -76,8 +76,8 @@ run image as daemon
 ```
 docker run -d <image_id>
 ```
-- *Note: if you run the container using <docker run <image_name>> and then run > docker ps will not show the any container running 
-so, we have to run container in interactive mode using docker run -it <image_name> and you will be inside the conatiner*
+- *Note: if you run the container using 'docker run <image_name>' and then run 'docker ps' will not show the any container running 
+so, we have to run container in interactive mode using 'docker run -it <image_name>' and you will be inside the conatiner*
 
 start the container
 ```
