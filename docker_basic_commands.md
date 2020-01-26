@@ -14,3 +14,7 @@ docker info
 get information about any docker commands (docker --help)
 ```
 docker image --help
+login to docker hub
+```
+docker login
+```
