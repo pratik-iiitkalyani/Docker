@@ -17,7 +17,7 @@ because we want Presistent storage for our jenkins home directory*
 running the container and use -v for give local location for the jenkins home(recommended) - on windows
 - name is optional
 ```
-docker run -p --name MyJenkins 8080:8080 -p 50000:50000 -v C:\\Users\\ts-pratik.kumar\\Desktop\\Jenkins_Home:/var/jenkins_home jenkins
+docker run --name MyJenkins -p 8080:8080 -p 50000:50000 -v C:\\Users\\ts-pratik.kumar\\Desktop\\Jenkins_Home:/var/jenkins_home jenkins
 ```
 - access jenkins on localhost:8080 and give password. you can get password from log or Jenkins sceret folder 
 - later you can change password from ->admin->configure
@@ -25,4 +25,26 @@ docker run -p --name MyJenkins 8080:8080 -p 50000:50000 -v C:\\Users\\ts-pratik.
 - Note: *if we stop the above created container and again start the container and using the same physical location to store the data
 in this time the jenkins dashboard is different and ask user and password credentials and all jobs we created earlier is stiil there
 *
-- that why we used persistent volume - this is useful when we want to share our data with multiple containers
+- that why we used persistent volume -> this is useful when we want to share our data with multiple containers
+
+**Insted of giving physical location we can also first create volume and assign to the container**
+create volume
+```
+docker volume create <volume_name>
+```
+run the docker container
+```
+docker run --name MyJenkins -p 8080:8080 -p 50000:50000 -v <volume_name>:/var/jenkins_home jenkins
+```
+*after running the container we can inspect the conatiner and see assigned volume in mount key*
+
+- other command
+list the volume
+```
+docker volume ls
+```
+inspect the created volume
+```
+docker volume inspect <volume_name>
+```
+
