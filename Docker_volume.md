@@ -11,3 +11,12 @@ Use of Volumes
 - Share volume (storage/data) among different containers
 - Attach volume to container
 - On deleting container volume does not delete
+
+**create volume**
+```
+docker volume create <volume_name>
+```
+**list the volume**
+```
+docker volume ls
+```
