@@ -7,7 +7,6 @@ any explicit location for that data to be stored it gets stored in the container
 to share the data between the container so it should be possiable
 
 Use of Volumes
-===========
 - Decoupling(seperate) container from storage
 - Share volume (storage/data) among different containers
 - Attach volume to container
