@@ -32,4 +32,10 @@ docker volume rm <volume_name>
 ```
 docker volume prune
 ```
-
+**assign volume to container**
+- assing volume to jenkins container
+```
+docker run --name MyJenkins -p 8080:8080 -p 50000:50000 -v <volume_name>:/var/jenkins_home jenkins
+```
+- NOTE: *after running MyJenkins on localhost:8080 and suppose created a job and again we create a one more conatiner of jenkins by running **docker run --name MyJenkins -p 9090:8080 -p 60000:50000 -v <volume_name>:/var/jenkins_home jenkins**on different port and assign the same volume, In this time the jenkins dashboard is different and ask user and password credentials and all jobs we created earlier is stiil there*
+*So, data stored in that volume is shared between two container of the jenkins and the volume will remain intact even if we close any of these container or even delete or remove the containers we still our volume that we can use for any other conatiner as well*
