@@ -23,8 +23,7 @@ docker run --name MyJenkins -p 8080:8080 -p 50000:50000 -v C:\\Users\\ts-pratik.
 - later you can change password from ->admin->configure
 
 - Note: *if we stop the above created container and again start the container and using the same physical location to store the data
-in this time the jenkins dashboard is different and ask user and password credentials and all jobs we created earlier is stiil there
-*
+in this time the jenkins dashboard is different and ask user and password credentials and all jobs we created earlier is stiil there*
 - that why we used persistent volume -> this is useful when we want to share our data with multiple containers
 
 **Insted of giving physical location we can also first create volume and assign to the container**
