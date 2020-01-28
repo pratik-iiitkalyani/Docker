@@ -20,3 +20,16 @@ docker volume create <volume_name>
 ```
 docker volume ls
 ```
+**Inspect the volume**
+```
+docker volume inspect <volume_name>
+```
+**remove volume**
+```
+docker volume rm <volume_name>
+```
+**remove all unused volume**
+```
+docker volume prune
+```
+
