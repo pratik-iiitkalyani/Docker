@@ -32,10 +32,54 @@ docker volume rm <volume_name>
 ```
 docker volume prune
 ```
-**assign volume to container**
+**asign volume to container**
 - assing volume to jenkins container
 ```
 docker run --name MyJenkins -p 8080:8080 -p 50000:50000 -v <volume_name>:/var/jenkins_home jenkins
 ```
 - NOTE: *after running MyJenkins on localhost:8080 and suppose created a job and again we create a one more conatiner of jenkins by running **docker run --name MyJenkins -p 9090:8080 -p 60000:50000 -v <volume_name>:/var/jenkins_home jenkins**on different port and assign the same volume, In this time the jenkins dashboard is different and ask user and password credentials and all jobs we created earlier is stiil there*
 *So, data stored in that volume is shared between two container of the jenkins and the volume will remain intact even if we close any of these container or even delete or remove the containers we still our volume that we can use for any other conatiner as well*
+
+**Bind Mount**
+- a file or a directory on the host machine is mounted into container
+- the file or directory does not need to exist on the Docker host already. it is created on demand if it doesnot yet exist
+
+**asign volume in local physical loction**
+```
+docker run --name MyJenkins -p 8080:8080 -p 50000:50000 -v C:\\Users\\ts-pratik.kumar\\Desktop\\Jenkins_Home:/var/jenkins_home jenkins
+```
+
+**NOTES**
+- By default all files created inside a container are stored on a writable container layer
+
+- The data doesn’t persist when that container is no longer running
+
+- A container’s writable layer is tightly coupled to the host machine where the container is running. You can’t easily move the data somewhere else.
+
+- Docker has two options for containers to store files in the host machine, so that the files are persisted even after the container stops
+
+**Volumes and Bind Mounts**
+- Volumes are stored in a part of the host filesystem which is managed by Docker
+
+- Non-Docker processes should not modify this part of the filesystem
+
+- Bind mounts may be stored anywhere on the host system
+
+- Non-Docker processes on the Docker host or a Docker container can modify them at any time
+
+- In Bind Mounts, the file or directory is referenced by its full path on the host machine. 
+
+
+- Volumes are the best way to persist data in Docker
+
+- volumes are managed by Docker and are isolated from the core functionality of the host machine
+
+- A given volume can be mounted into multiple containers simultaneously.
+
+- When no running container is using a volume, the volume is still available to Docker and is not removed automatically. You can remove unused volumes using docker volume prune.
+
+- When you mount a volume, it may be named or anonymous. 
+
+- Anonymous volumes are not given an explicit name when they are first mounted into a container
+
+- Volumes also support the use of volume drivers, which allow you to store your data on remote hosts or cloud providers, among other possibilities.
