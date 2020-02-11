@@ -43,6 +43,14 @@ show stats of running container
 ```
 docker stats <container_id | container_name>
 ```
+go inside the container
+```
+docker exec -it <container_id | container_name> bin/bash
+```
+get ip address of container
+```
+docker inspect <container_id> | grep IPAddress
+```
 attach to your running container
 ```
 docker attach <container_id | container_name>
